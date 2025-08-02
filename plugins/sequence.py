@@ -25,7 +25,7 @@ async def start_sequence(client, message: Message):
         message_ids[user_id].append(msg.id)
 
 @Client.on_message(filters.command("esequence") & filters.private)
-@check_ban_status
+# @check_ban_status
 async def end_sequence(client, message: Message):
     user_id = message.from_user.id
     
