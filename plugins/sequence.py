@@ -2,7 +2,7 @@ import re
 import asyncio
 from pyrogram.enums import ParseMode
 from pyrogram.errors import FloodWait
-from pyrogram import Client,fiters
+from pyrogram import Client,filters 
 
 active_sequences = {}
 message_ids = {}
