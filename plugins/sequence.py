@@ -3,6 +3,7 @@ import asyncio
 from pyrogram.enums import ParseMode
 from pyrogram.errors import FloodWait
 from pyrogram import Client,filters 
+from pyrogram.types import Message
 
 active_sequences = {}
 message_ids = {}
