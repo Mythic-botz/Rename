@@ -12,7 +12,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 @Client.on_message(filters.command("ssequence") & filters.private)
-@check_ban_status
+# @check_ban_status
 async def start_sequence(client, message: Message):
     user_id = message.from_user.id
         
