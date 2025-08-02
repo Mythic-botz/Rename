@@ -183,4 +183,16 @@ class Database:
         await self.col.update_one({'_id': int(user_id)}, {'$set': {'video': video}})
 
 
+    async def get_encoded_by(self, file_id: int) -> str:
+        data = await self.meta.find_one({"file_id": file_id})
+        return data.get("encoded_by") if data else None
+
+    async def save_encoded_by(self, file_id: int, encoded_by: str):
+        await self.meta.update_one(
+            {"file_id": file_id},
+            {"$set": {"encoded_by": encoded_by}},
+            upsert=True
+        )
+
+
 codeflixbots = Database(Config.DB_URL, Config.DB_NAME)
